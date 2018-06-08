@@ -96,23 +96,23 @@ app.patch('/todos/:id', authenticate, (req, res) => {
 
     }
 
-    Todo.findOneAndUpdate({
-        _id : id,
-        _creator : req.user._id
-    }, {
-        $set: body
-    }, {
-            new: true
-        }).then((todo) => {
-            if (!todo) {
-                return res.status(404).send();
-            }
+    // Todo.findOneAndUpdate({
+    //     _id : id,
+    //     _creator : req.user._id
+    // }, {
+    //     $set: body
+    // }, {
+    //         new: true
+    //     }).then((todo) => {
+    //         if (!todo) {
+    //             return res.status(404).send();
+    //         }
 
-            res.send({ todo })
+    //         res.send({ todo })
 
-        }).catch((e) => {
-            res.status(400).send();
-        })
+    //     }).catch((e) => {
+    //         res.status(400).send();
+    //     })
 
 })
 
