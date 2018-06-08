@@ -70,7 +70,13 @@ UserSchema.statics.findByToken = function (token) {
 
 }
 
-UserSchema.pre('save', function (next) {
+//--- Saving the hashed password to the database so no one can access it
+
+//<Schema>.pre is used to make mongoose middleware for a database
+// 'save' is the function you want to call the middleware
+// function(next) is the middleware function to call 
+// You should call it with 'next' if not the server will crash
+UserSchema.pre('save', function (next) { 
     var user = this;
     if (user.isModified('password')) {
         password = user.password;
