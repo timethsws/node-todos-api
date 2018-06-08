@@ -202,7 +202,7 @@ describe('PATCH /todos/:id', () => {
 describe('GET /users/me',() =>{
     it('Should return user if authenticated',(done) => {
         request(app)
-            .get('/user/me')
+            .get('/users/me')
             .set('x-auth',users[0].tokens[0].token)
             .expect(200)
             .expect((res) => {
@@ -215,7 +215,7 @@ describe('GET /users/me',() =>{
     it('Should return 401 if not authenticated', (done) => {
         //done();
         request(app)
-            .get('/user/me')
+            .get('/users/me')
             .expect(401)
             .expect((res) => {
                 expect(res.body).toEqual({})
@@ -224,7 +224,7 @@ describe('GET /users/me',() =>{
     })
 })
 
-describe('POST /userS',() =>{
+describe('POST /users',() =>{
 
     it('Should create a user',(done) => {
         var email = 'example@this.com'
