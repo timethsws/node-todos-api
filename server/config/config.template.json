@@ -1,0 +1,12 @@
+{
+    "test" : {
+        "PORT" : 3000,
+        "Atlas_DB" : "localhost:27017/ToDoTest",
+        "JWT_SECRET" : "ASDASDASDASDASDASDASDASDASD"
+    },
+    "development" : {
+        "PORT" : 3000,
+        "Atlas_DB" : "localhost:27017/ToDo",
+        "JWT_SECRET" : "ASDASDASDASDASDASDASDASDASD"
+    }
+}
